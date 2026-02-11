@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="game-wrapper">
+            <div class="sidebar">
+                <div class="info-panel">
+                    <h1>TETRIS</h1>
+                    <div class="score-display">
+                        <div class="score-item">
+                            <label>SCORE</label>
+                            <div id="score">0</div>
+                        </div>
+                        <div class="score-item">
+                            <label>LEVEL</label>
+                            <div id="level">1</div>
+                        </div>
+                        <div class="score-item">
+                            <label>LINES</label>
+                            <div id="lines">0</div>
+                        </div>
+                    </div>
+                    <div class="next-piece">
+                        <label>NEXT</label>
+                        <canvas id="nextCanvas" width="100" height="100"></canvas>
+                    </div>
+                    <button id="startBtn" class="btn">START GAME</button>
+                    <button id="pauseBtn" class="btn" style="display: none;">PAUSE</button>
+                    <div class="controls-info">
+                        <p><strong>Desktop:</strong></p>
+                        <p>← → Move</p>
+                        <p>↑ Rotate</p>
+                        <p>↓ Drop</p>
+                        <p>Space Fast Drop</p>
+                        <p>ESC Pause</p>
+                        <p><strong>Mobile:</strong></p>
+                        <p>Touch & swipe</p>
+                    </div>
+                </div>
+            </div>
+            <div class="game-board-container">
+                <canvas id="gameCanvas" width="320" height="640"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div id="gameOverScreen" class="game-over-screen" style="display: none;">
+        <div class="game-over-text">
+            <p>GAME OVER</p>
+        </div>
+        <div class="button-container">
+            <button id="yesBtn2" class="btn-choice yes-btn">YES ❤️</button>
+            <button id="noBtn2" class="btn-choice no-btn">NO</button>
+        </div>
+    </div>
+
+    <div id="gameOverModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>GAME OVER</h2>
+            <p id="gameOverScore">Final Score: 0</p>
+            <p id="valentineMessage" style="font-size: 1.4em; margin: 30px 0; color: #ff1493; font-weight: bold;">
+                Will you be my Valentine?
+            </p>
+            <div class="button-group">
+                <button id="yesBtn" class="btn btn-yes">YES ❤️</button>
+                <button id="noBtn" class="btn btn-no">NO</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="heartExplosion" class="heart-explosion" style="display: none;"></div>
+
+    <div id="gifDisplay" class="gif-display" style="display: none;">
+        <img id="gifImage" src="gif/icegif-685.gif" alt="Celebration" class="celebration-gif">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
